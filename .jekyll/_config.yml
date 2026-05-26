@@ -1,0 +1,18 @@
+# Setup
+title:               carlwilsn
+tagline:             'DeepDL log — Summer 2026'
+description:         'Reproducing BitNet b1.58 inside pytorch/torchtitan. Weekly notes from the build.'
+url:                 https://carlwilsn.github.io
+baseurl:             ''
+paginate:            10
+permalink:           /:year/:month/:day/:title/
+
+author:
+  name:              Carl Wilson
+  url:               https://github.com/carlwilsn
+
+plugins:
+  - jekyll-paginate
+
+# Build: source is the parent dir (the repo root). The workflow copies
+# root-level `posts/` into `_posts/` before jekyll runs.
