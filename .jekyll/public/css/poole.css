@@ -439,9 +439,9 @@ a.pagination-item:hover {
   margin: 0 0 2rem;
 }
 .post-item-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #303030;
+  color: #268bd2;
   text-decoration: none;
 }
 .post-item-title:hover {
@@ -449,10 +449,11 @@ a.pagination-item:hover {
 }
 .post-item-meta {
   color: #9a9a9a;
-  font-size: .85rem;
-  margin: .15rem 0 .4rem;
+  font-size: .75rem;
+  margin: .15rem 0 .3rem;
 }
 .post-item-summary {
   margin: 0;
+  font-size: .85rem;
   color: #515151;
 }
