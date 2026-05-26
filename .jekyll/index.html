@@ -3,6 +3,16 @@ layout: default
 title: Home
 ---
 
+<section class="intro" style="display:flex;align-items:center;gap:1.25rem;margin:0 0 2.5rem 0;">
+  <img src="{{ '/images/carl.jpg' | relative_url }}"
+       alt="Carl Wilson"
+       style="width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+  <div style="font-size:1rem;line-height:1.5;">
+    <p style="margin:0 0 0.6rem 0;">Hi, I'm Carl. This is where I'm logging my work this summer.</p>
+    <p style="margin:0;color:#555;">First time keeping a build log in public. The goal is to be purposefully ambitious — to find out what I'm actually capable of with AI in the loop.</p>
+  </div>
+</section>
+
 <ul class="post-list">
   {% for post in site.posts %}
     {% assign words = post.content | number_of_words %}
