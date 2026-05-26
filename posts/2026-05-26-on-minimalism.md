@@ -2,6 +2,7 @@
 layout: post
 title: On minimalism
 date: 2026-05-26
+summary: A blog should be a flat list of writing. Title, date, body. Everything else is maintenance debt.
 ---
 
 A blog should be a flat list of writing. No sidebar, no widgets, no related-posts carousel, no cookie banner. Title, date, body. That's the whole job.

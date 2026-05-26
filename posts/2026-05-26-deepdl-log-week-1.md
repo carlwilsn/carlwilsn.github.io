@@ -2,6 +2,7 @@
 layout: post
 title: DeepDL log — week 1
 date: 2026-05-26
+summary: First week of the summer DL grind. d2l chapters 1–3, the math is easy and the plumbing is hard.
 ---
 
 First week of the summer deep learning grind. Goals for the summer:

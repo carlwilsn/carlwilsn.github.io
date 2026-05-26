@@ -428,3 +428,31 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+/* Minimal post list */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.post-item {
+  margin: 0 0 2rem;
+}
+.post-item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #303030;
+  text-decoration: none;
+}
+.post-item-title:hover {
+  text-decoration: underline;
+}
+.post-item-meta {
+  color: #9a9a9a;
+  font-size: .85rem;
+  margin: .15rem 0 .4rem;
+}
+.post-item-summary {
+  margin: 0;
+  color: #515151;
+}

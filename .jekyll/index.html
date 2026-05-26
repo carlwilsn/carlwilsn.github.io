@@ -3,18 +3,19 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
+<ul class="post-list">
   {% for post in site.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
-  </div>
+    {% assign words = post.content | number_of_words %}
+    {% assign minutes = words | divided_by: 200 %}
+    {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+    <li class="post-item">
+      <a class="post-item-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <div class="post-item-meta">
+        {{ post.date | date: "%b %-d, %Y" }} · {{ minutes }} min read
+      </div>
+      <p class="post-item-summary">
+        {% if post.summary %}{{ post.summary }}{% else %}{{ post.excerpt | strip_html | truncate: 200 }}{% endif %}
+      </p>
+    </li>
   {% endfor %}
-</div>
+</ul>
