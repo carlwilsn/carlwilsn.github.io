@@ -14,4 +14,10 @@ date: YYYY-MM-DD
 
 **Deploy:** `git push`. GitHub Action builds and publishes to <https://carlwilsn.github.io>.
 
-**Local preview:** `cd .jekyll && bundle install && cp ../posts/*.md _posts/ && bundle exec jekyll serve` → <http://localhost:4000>.
+**Homepage sidebars:** the three-column home page reads two YAML files —
+edit a list, push, done:
+
+- `.jekyll/_data/open_questions.yml` — left column. Each: `q` (question), `since` (date).
+- `.jekyll/_data/revelations.yml` — right column. Each: `r` (insight), `on` (date).
+
+Newest at the top. When a question gets answered, move it to revelations.

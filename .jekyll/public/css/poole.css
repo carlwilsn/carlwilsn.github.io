@@ -457,3 +457,69 @@ a.pagination-item:hover {
   font-size: .85rem;
   color: #515151;
 }
+
+/*
+ * Home three-column layout
+ * Left: Open Questions · Middle: post stream · Right: Recent Revelations.
+ * Breaks out of the 38rem .container to a wider centered grid; the middle
+ * column stays readable while the two asides flank it. Collapses on mobile.
+ */
+.home-grid {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 38rem) 14rem;
+  gap: 2.5rem;
+  width: min(72rem, 94vw);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: left;
+  align-items: start;
+}
+.side {
+  font-size: .8rem;
+  position: sticky;
+  top: 1.5rem;
+}
+.side-title {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #9a9a9a;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #eee;
+}
+.side-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.side-item {
+  margin: 0 0 1.25rem;
+  line-height: 1.45;
+}
+.side-text {
+  display: block;
+  color: #515151;
+}
+.side-date {
+  display: block;
+  margin-top: .25rem;
+  font-size: .68rem;
+  color: #bbb;
+}
+.side-right .side-text { color: #2a2a2a; }
+
+/* Stack on narrow screens: posts first, then the two sidebars. */
+@media (max-width: 60rem) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    left: 0;
+    transform: none;
+    gap: 2rem;
+  }
+  .side { position: static; }
+  .side-mid { order: -1; }
+}

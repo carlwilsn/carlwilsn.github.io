@@ -14,19 +14,49 @@ title: Home
   </div>
 </section>
 
-<ul class="post-list">
-  {% for post in site.posts %}
-    {% assign words = post.content | number_of_words %}
-    {% assign minutes = words | divided_by: 200 %}
-    {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
-    <li class="post-item">
-      <a class="post-item-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <div class="post-item-meta">
-        {{ post.date | date: "%b %-d, %Y" }} · {{ minutes }} min read
-      </div>
-      <p class="post-item-summary">
-        {% if post.summary %}{{ post.summary }}{% else %}{{ post.excerpt | strip_html | truncate: 200 }}{% endif %}
-      </p>
-    </li>
-  {% endfor %}
-</ul>
+<div class="home-grid">
+
+  <aside class="side side-left">
+    <h2 class="side-title">Open Questions</h2>
+    <ul class="side-list">
+      {% for item in site.data.open_questions %}
+      <li class="side-item">
+        <span class="side-text">{{ item.q }}</span>
+        {% if item.since %}<span class="side-date">open since {{ item.since | date: "%b %-d" }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+  <main class="side-mid">
+    <ul class="post-list">
+      {% for post in site.posts %}
+        {% assign words = post.content | number_of_words %}
+        {% assign minutes = words | divided_by: 200 %}
+        {% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+        <li class="post-item">
+          <a class="post-item-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <div class="post-item-meta">
+            {{ post.date | date: "%b %-d, %Y" }} · {{ minutes }} min read
+          </div>
+          <p class="post-item-summary">
+            {% if post.summary %}{{ post.summary }}{% else %}{{ post.excerpt | strip_html | truncate: 200 }}{% endif %}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
+
+  <aside class="side side-right">
+    <h2 class="side-title">Recent Revelations</h2>
+    <ul class="side-list">
+      {% for item in site.data.revelations %}
+      <li class="side-item">
+        <span class="side-text">{{ item.r }}</span>
+        {% if item.on %}<span class="side-date">{{ item.on | date: "%b %-d" }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </aside>
+
+</div>
