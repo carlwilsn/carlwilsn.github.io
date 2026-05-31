@@ -4,17 +4,36 @@
   {% include head.html %}
 
   <body>
-    <div class="masthead">
-      <div class="container">
-        <h3 class="masthead-title">
-          <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-          <small>{{ site.tagline }}</small>
-        </h3>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="{{ site.baseurl }}/">Carl Wilson Blog</a>
+        <div class="motivation">
+          <button type="button">Motivation</button>
+          <div class="pop" role="note">
+            <p>Hello, I'm Carl Wilson, and this is my summer log.</p>
+            <p>The point is to be purposefully ambitious about deep learning &mdash; to find out what I'm actually capable of learning and producing with AI in the loop. Right now that means reproducing BitNet and running experiments around it, with a weekly check-in here to keep me honest.</p>
+            <p>The longer arc is building up to proposing and testing architecture designs of my own.</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
 
     <div class="container content">
       {{ content }}
     </div>
+
+    <script>
+      // Rails are full columns when there's horizontal room; below the
+      // stacking breakpoint they collapse into tap-to-open dropdowns.
+      (function () {
+        var mq = window.matchMedia('(max-width: 60rem)');
+        function sync() {
+          document.querySelectorAll('.side-fold').forEach(function (d) { d.open = !mq.matches; });
+        }
+        sync();
+        if (mq.addEventListener) mq.addEventListener('change', sync);
+        else window.addEventListener('resize', sync);
+      })();
+    </script>
   </body>
 </html>

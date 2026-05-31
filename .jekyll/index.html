@@ -3,29 +3,20 @@ layout: default
 title: Home
 ---
 
-<section class="intro" style="display:flex;align-items:center;gap:1.25rem;margin:0 0 2.5rem 0;">
-  <img src="{{ '/images/carl.jpg' | relative_url }}"
-       alt="Carl Wilson"
-       style="width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0;">
-  <div style="font-size:0.85rem;line-height:1.5;">
-    <p style="margin:0 0 0.6rem 0;">Hello, I'm Carl Wilson, and this is my summer log.</p>
-    <p style="margin:0 0 0.6rem 0;color:#555;">The point is to be purposefully ambitious about deep learning and find out what I'm actually capable of learning and producing with AI in the loop. Right now that means reproducing BitNet and running experiments around it, with a weekly check-in here to keep me honest.</p>
-    <p style="margin:0;color:#555;">The longer arc is building up to proposing and testing architecture designs of my own.</p>
-  </div>
-</section>
-
 <div class="home-grid">
 
   <aside class="side side-left">
-    <h2 class="side-title">Open Questions</h2>
-    <ul class="side-list">
-      {% for item in site.data.open_questions %}
-      <li class="side-item">
-        <span class="side-text">{{ item.q }}</span>
-        {% if item.since %}<span class="side-date">open since {{ item.since | date: "%b %-d" }}</span>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
+    <details class="side-fold" open>
+      <summary class="side-title">Open Questions <span class="chev">&#9662;</span></summary>
+      <ul class="side-list">
+        {% for item in site.data.open_questions %}
+        <li class="side-item">
+          <span class="side-text">{{ item.q }}</span>
+          {% if item.since %}<span class="side-date">open since {{ item.since | date: "%b %-d" }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
   </aside>
 
   <main class="side-mid">
@@ -48,15 +39,17 @@ title: Home
   </main>
 
   <aside class="side side-right">
-    <h2 class="side-title">Recent Revelations</h2>
-    <ul class="side-list">
-      {% for item in site.data.revelations %}
-      <li class="side-item">
-        <span class="side-text">{{ item.r }}</span>
-        {% if item.on %}<span class="side-date">{{ item.on | date: "%b %-d" }}</span>{% endif %}
-      </li>
-      {% endfor %}
-    </ul>
+    <details class="side-fold" open>
+      <summary class="side-title">Recent Revelations <span class="chev">&#9662;</span></summary>
+      <ul class="side-list">
+        {% for item in site.data.revelations %}
+        <li class="side-item">
+          <span class="side-text">{{ item.r }}</span>
+          {% if item.on %}<span class="side-date">{{ item.on | date: "%b %-d" }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
   </aside>
 
 </div>
