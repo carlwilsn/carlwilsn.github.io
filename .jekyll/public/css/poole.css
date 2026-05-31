@@ -54,7 +54,7 @@ html {
 }
 @media (min-width: 38em) {
   html {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
@@ -466,9 +466,9 @@ a.pagination-item:hover {
  */
 .home-grid {
   display: grid;
-  grid-template-columns: 14rem minmax(0, 38rem) 14rem;
-  gap: 2.5rem;
-  width: min(72rem, 94vw);
+  grid-template-columns: 13rem minmax(0, 34rem) 13rem;
+  gap: 2rem;
+  width: min(68rem, 96vw);
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -512,7 +512,7 @@ a.pagination-item:hover {
 .side-right .side-text { color: #2a2a2a; }
 
 /* Stack on narrow screens: posts first, then the two sidebars. */
-@media (max-width: 60rem) {
+@media (max-width: 48rem) {
   .home-grid {
     grid-template-columns: 1fr;
     width: 100%;
