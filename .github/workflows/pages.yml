@@ -20,10 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Stage posts/ and images/ into .jekyll/
+      - name: Stage posts/, collections, and images/ into .jekyll/
         run: |
-          mkdir -p .jekyll/_posts
+          mkdir -p .jekyll/_posts .jekyll/_open_questions .jekyll/_revelations
           cp posts/*.md .jekyll/_posts/ 2>/dev/null || true
+          cp open-questions/*.md .jekyll/_open_questions/ 2>/dev/null || true
+          cp revelations/*.md .jekyll/_revelations/ 2>/dev/null || true
           if [ -d images ]; then cp -r images .jekyll/images; fi
 
       - uses: ruby/setup-ruby@v1

@@ -9,9 +9,10 @@ title: Home
     <details class="side-fold" open>
       <summary class="side-title">Open Questions <span class="chev">&#9662;</span></summary>
       <ul class="side-list">
-        {% for item in site.data.open_questions %}
+        {% assign questions = site.open_questions | sort: 'since' | reverse %}
+        {% for item in questions %}
         <li class="side-item">
-          <span class="side-text">{{ item.q }}</span>
+          <span class="side-text">{{ item.content | strip_html | strip }}</span>
           {% if item.since %}<span class="side-date">open since {{ item.since | date: "%b %-d" }}</span>{% endif %}
         </li>
         {% endfor %}
@@ -42,9 +43,10 @@ title: Home
     <details class="side-fold" open>
       <summary class="side-title">Recent Revelations <span class="chev">&#9662;</span></summary>
       <ul class="side-list">
-        {% for item in site.data.revelations %}
+        {% assign revs = site.revelations | sort: 'on' | reverse %}
+        {% for item in revs %}
         <li class="side-item">
-          <span class="side-text">{{ item.r }}</span>
+          <span class="side-text">{{ item.content | strip_html | strip }}</span>
           {% if item.on %}<span class="side-date">{{ item.on | date: "%b %-d" }}</span>{% endif %}
         </li>
         {% endfor %}

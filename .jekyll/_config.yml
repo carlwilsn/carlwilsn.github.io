@@ -13,4 +13,12 @@ author:
 future:               true   # show posts dated in the future
 
 # Build: source is the parent dir (the repo root). The workflow copies
-# root-level `posts/` into `_posts/` before jekyll runs.
+# root-level `posts/`, `open-questions/`, and `revelations/` into their
+# Jekyll folders (`_posts/`, `_open_questions/`, `_revelations/`) before
+# jekyll runs.
+
+collections:
+  open_questions:
+    output: false
+  revelations:
+    output: false

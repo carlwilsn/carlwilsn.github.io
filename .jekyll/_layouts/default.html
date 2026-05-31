@@ -8,7 +8,7 @@
       <div class="topbar-inner">
         <a class="brand" href="{{ site.baseurl }}/">Carl Wilson Blog</a>
         <div class="motivation">
-          <button type="button">Motivation</button>
+          <button type="button" aria-expanded="false">Motivation</button>
           <div class="pop" role="note">
             <p>Hello, I'm Carl Wilson, and this is my summer log.</p>
             <p>The point is to be purposefully ambitious about deep learning &mdash; to find out what I'm actually capable of learning and producing with AI in the loop. Right now that means reproducing BitNet and running experiments around it, with a weekly check-in here to keep me honest.</p>
@@ -33,6 +33,25 @@
         sync();
         if (mq.addEventListener) mq.addEventListener('change', sync);
         else window.addEventListener('resize', sync);
+      })();
+
+      // Motivation: click the button to toggle the intro popover. Click
+      // outside or press Escape to close.
+      (function () {
+        var mot = document.querySelector('.motivation');
+        if (!mot) return;
+        var btn = mot.querySelector('button');
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var open = mot.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+          if (!mot.contains(e.target)) mot.classList.remove('open');
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') mot.classList.remove('open');
+        });
       })();
     </script>
   </body>
