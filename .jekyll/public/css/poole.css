@@ -333,6 +333,8 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 4em;
   font-size: 0.92rem;
 }
+.post h2 { font-size: 1.2rem; }
+.post h3 { font-size: 1.05rem; }
 
 /* Blog post or page title */
 .page-title,
@@ -343,6 +345,8 @@ tbody tr:nth-child(odd) th {
 .page-title,
 .post-title {
   margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 1.25;
 }
 
 /* Meta data line below post title */
