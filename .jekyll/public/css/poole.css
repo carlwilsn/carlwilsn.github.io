@@ -286,7 +286,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 38rem;
+  max-width: 46rem;
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
@@ -331,6 +331,7 @@ tbody tr:nth-child(odd) th {
 .page,
 .post {
   margin-bottom: 4em;
+  font-size: 0.92rem;
 }
 
 /* Blog post or page title */
@@ -442,9 +443,9 @@ a.pagination-item:hover {
  * Top bar (site-wide): big brand on the left, Motivation popover on the
  * right that reveals the full intro on hover / tap.
  */
-.topbar { border-bottom: 1px solid #e5e5e5; margin-bottom: 2.25rem; }
+.topbar { border-bottom: 1px solid #e5e5e5; margin-bottom: 1.5rem; }
 .topbar-inner {
-  width: min(79rem, 92vw); margin: 0 auto; padding: 1.5rem 0 1.25rem;
+  width: min(79rem, 92vw); margin: 0 auto; padding: 0.8rem 0;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
 .brand { font-size: 1.55rem; font-weight: 700; letter-spacing: -.01em; color: #303030; }
